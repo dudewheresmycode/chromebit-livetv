@@ -1,0 +1,15 @@
+# Auto-Login
+#
+#
+
+description     "Auto-login service"
+author          "brian@ndmweb.com"
+
+start on login-prompt-visible
+
+script
+  sleep 4
+  /usr/share/tv-service/bin/startup
+end script
+
+

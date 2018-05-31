@@ -1,0 +1,17 @@
+# TV Service Daemon
+#
+#
+
+description     "Auto-login service"
+author          "brian@ndmweb.com"
+
+start on start-user-session
+stop on starting pre-shutdown
+respawn
+respawn limit 10 5
+
+script
+  /usr/local/bin/node /usr/share/tv-service/app/index.js
+end script
+
+
